@@ -57,18 +57,30 @@ h1 {
   margin-top: 20px;
   margin-bottom: 40px;
   color: #0d3b66;
-  font-size: 52px;
+  font-size: 2.75em;
   line-height: 1.3em;
   font-weight: 700;
+  letter-spacing: 0.2px;
 }
 
 h2 {
   margin-top: 20px;
   margin-bottom: 40px;
   color: #0d3b66;
-  font-size: 48px;
-  line-height: 1.5em;
+  font-size: 1.7em;
+  line-height: 1.3em;
   font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #0d3b66;
+  font-size: 1.2em;
+  line-height: 1.3em;
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }
 
 
