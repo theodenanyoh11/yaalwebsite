@@ -7,6 +7,7 @@ import Latestepisode from "../components/latestepisode";
 import Pastepisodes from "../components/pastepisodes";
 
 
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`you are a laywer podcast`, `legal podcast`, `podcast`, `you are a lawyer`, `yaal`,`kyla denanyoh`]} />
