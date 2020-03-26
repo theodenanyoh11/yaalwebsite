@@ -38,7 +38,7 @@ const getHero = graphql`
   {
     hero: contentfulHero {
       image {
-        fixed (width:497) {
+        fixed (width:450) {
           ...GatsbyContentfulFixed
         }
       }
