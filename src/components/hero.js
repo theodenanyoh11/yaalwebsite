@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled, { keyframes } from 'styled-components'
 import Img from 'gatsby-image'
+import Logos from "./logos"
 
 
 const Hero = ({ className }) => {
@@ -17,6 +18,8 @@ const Hero = ({ className }) => {
         <Col>
         <h1>{title}</h1>
         <p>{subtitle}</p>
+        <SubscribeCTA>Subscribe & listen</SubscribeCTA>
+        <Logos />
         </Col>
 
         <Col>
@@ -38,7 +41,7 @@ const getHero = graphql`
   {
     hero: contentfulHero {
       image {
-        fixed (width:450) {
+        fixed (width:542) {
           ...GatsbyContentfulFixed
         }
       }
@@ -78,6 +81,7 @@ const Row = styled.div`
   grid-row-gap: 16px;
   grid-template-columns: 1fr 1fr;
   grid-template-row: auto;
+
 `
 
 const Col = styled.div`
@@ -87,6 +91,8 @@ const Col = styled.div`
   padding: 0 15px;
   flex-direction: column;
   align-items: flex-start;
+  max-width: 540px;
+  margin: 0 20px;
  
 `
 
@@ -97,5 +103,13 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 30px;
   justify-content: center;
+  
+`
+const SubscribeCTA = styled.button`
+padding: 12px 18px;
+background-color: #0d3b66;
+margin: 35px 0;
+border: none;
+color: white;
   
 `
