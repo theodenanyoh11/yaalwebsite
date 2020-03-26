@@ -8,10 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { GlobalStyle } from '../utils/globalStyles'
 
-import Header from "./header"
+import Navbar from "./navbar"
 import Footer from "./footer"
-import "./layout.css"
 import Hero from "./hero"
 
 const Layout = ({ children }) => {
@@ -27,8 +27,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-        <Header />
-        <Hero />
+        <GlobalStyle />
+        <Navbar />
+        {children}
         <Footer />
      
     </>

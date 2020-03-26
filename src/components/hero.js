@@ -1,42 +1,101 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
+import styled, { keyframes } from 'styled-components'
+import Img from 'gatsby-image'
 
-import Image from "../components/image"
-import './hero.css'
-import Section from "../components/section"
 
-const Hero = () => (
-<Section>
- <div className="Hero">
-          <div className="HeroText">
-            <div className="HeroTag">
-            <p>
-            Subscribe & listen
-          </p>
-            </div>
-            
-            <h1>You are a Lawyer Podcast - hosted by Kyla Denanyoh</h1>
-              <p>A podcast that shares the experiences and successes of law graduates who created their own paths.</p>
-              <p>Subscribe and listen</p>
-          </div>
+const Hero = ({ className }) => {
+  const { 
+    hero: { image, title, subtitle }
+  } = useStaticQuery(getHero)
   
-          <div className="HeroText">
-            <div className="HeroTag">
-            <p>
-            Subscribe & listen
-          </p>
-            </div>
-            
-            <h1>You are a Lawyer Podcast - hosted by Kyla Denanyoh</h1>
-              <p>A podcast that shares the experiences and successes of law graduates who created their own paths.</p>
-              <p>Subscribe and listen</p>
-          </div>
-        
-        </div>
+  return (
+  
+      
+    <Wrapper>
+      <Row>
+        <Col>
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
+        </Col>
 
-        </Section>
-     
+        <Col>
+        <Img
+          fixed={image.fixed}
+          alt={`Picture of me in Florence`}
+        />
+        </Col>
+
+      </Row>
+    </Wrapper>
+      
+   
   )
+}
+
+// query
+const getHero = graphql`
+  {
+    hero: contentfulHero {
+      image {
+        fixed (width:497) {
+          ...GatsbyContentfulFixed
+        }
+      }
+      title
+      subtitle
+    }
+  }
+`
+
+
+// styles
+export const heroAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(20px);  /* starts down and goes up */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+
+export default styled(Hero)`
+  height: 920px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-color: rgba(0,0,0, 0.5) !important;
+  opacity: 1 !important;
+`
+const Row = styled.div`
+  display:grid;
+  margin: 0 -15px;
+  flex-wrap: wrap;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-row: auto;
+`
+
+const Col = styled.div`
+  position: relative;
+  display:flex;
+  overflow: visible;
+  padding: 0 15px;
+  flex-direction: column;
+  align-items: flex-start;
+ 
+`
+
+const Wrapper = styled.div`
+  display:block;
+  width:100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 30px;
+  justify-content: center;
   
-  export default Hero
-  
+`

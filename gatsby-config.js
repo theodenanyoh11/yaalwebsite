@@ -1,3 +1,10 @@
+const dotenv = require('dotenv')
+
+if (process.env.NODE_ENV !=='production') {
+  dotenv.config ()
+}
+
+
 module.exports = {
   siteMetadata: {
     title: `You are a Lawyer`,
@@ -27,8 +34,24 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `cmlokv6nn36t`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+  
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+
   ],
 }

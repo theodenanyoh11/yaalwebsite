@@ -1,18 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Hero from "../components/Hero"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import HeroImage from "../images/gatsby-astronaut.png"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Hero from '../components/hero';
+
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    
+    <SEO title="You are a Lawyer Podcast" keywords={[`you are a laywer podcast`, `legal podcast`, `podcast`, `you are a lawyer`, `yaal`,`kyla denanyoh`]} />
     <Hero />
-
   </Layout>
 )
 
