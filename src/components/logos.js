@@ -33,7 +33,7 @@ const getLogos = graphql`
           id: contentful_id
           title
           image {
-            fixed(width: 50) {
+            fixed(width: 24) {
               ...GatsbyContentfulFixed
             }
           }
@@ -47,8 +47,8 @@ const getLogos = graphql`
 const LogosWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 40px;
-  margin: 75px 0;
+  grid-gap: 24px;
+  margin: 5px 0;
   justify-items: center;
   @media (max-width: 640px) {
     grid-template-columns: repeat(2, 1fr);

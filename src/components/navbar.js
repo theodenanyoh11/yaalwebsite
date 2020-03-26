@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import useAnimateOnScrolled from '../utils/animateOnScrolled'
 
 
-import './header.css'
+
 
 const Navbar = () => {
   const hasScrolled = useAnimateOnScrolled()
