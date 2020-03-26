@@ -22,7 +22,7 @@ const Hero = ({ className }) => {
         <Col>
         <Img
           fixed={image.fixed}
-          alt={`Picture of me in Florence`}
+          alt={`Hero Image`}
         />
         </Col>
 
