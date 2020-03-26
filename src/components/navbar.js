@@ -9,7 +9,7 @@ import useAnimateOnScrolled from '../utils/animateOnScrolled'
 
 
 const Navbar = () => {
-  const hasScrolled = useAnimateOnScrolled()
+
 
   const {
     navbarLogo: { logoUrl, logo },
@@ -18,8 +18,7 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <NavbarWrapper hasScrolled={hasScrolled}>
-        
+      <NavbarWrapper>
           <LogoWrap>
             <Link to={logoUrl}>
                 <Img
@@ -116,18 +115,13 @@ const NavbarWrapper = styled.div`
   -ms-flex-align: center;
   align-items: center;
 
-  transition: .8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  ${({ hasScrolled }) => hasScrolled && `
-    background: rgba(0, 0, 0, 0.9);
-    padding: 15px 0;
-    backdrop-filter: blur(20px);
-  `}
+ 
   @media (max-width: 640px) {
     padding: 15px 0;
   }
   /* Inner links */
   
-  }
+  
 `
 
 const NavbarGroup = styled.div`
