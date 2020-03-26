@@ -63,7 +63,7 @@ const getNavbar = graphql`
     navbarLinks: allContentfulNavbarLinks(sort: {fields: createdAt}) {
       edges {
         node {
-          id: contentful_id
+          id
           navbarItemUrl
           navbarItemText
         }
