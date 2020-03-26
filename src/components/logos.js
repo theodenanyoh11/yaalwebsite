@@ -30,7 +30,7 @@ const getLogos = graphql`
     logos: allContentfulLogos(sort: {fields: createdAt, order: ASC}) {
       edges {
         node {
-          id: contentful_id
+          id
           title
           image {
             fixed(width: 24) {
