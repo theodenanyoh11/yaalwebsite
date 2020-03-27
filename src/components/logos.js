@@ -33,7 +33,7 @@ const getLogos = graphql`
           id
           title
           image {
-            fixed(width: 24) {
+            fixed(width: 45) {
               ...GatsbyContentfulFixed
             }
           }
