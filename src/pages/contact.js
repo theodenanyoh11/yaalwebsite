@@ -7,7 +7,7 @@ import Pastepisodes from "../components/pastepisodes";
 
 
 
-const About = () => (
+const Contact = () => (
   <Layout>
     <SEO title="Home" keywords={[`you are a laywer podcast`, `legal podcast`, `podcast`, `you are a lawyer`, `yaal`,`kyla denanyoh`]} />
  
@@ -16,4 +16,4 @@ const About = () => (
 
 )
 
-export default About
+export default Contact
