@@ -1,8 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import Img from 'gatsby-image'
-import Logos from "./logos"
 
 
 const Latestepisode = ({ className }) => {

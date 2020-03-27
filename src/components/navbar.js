@@ -3,9 +3,6 @@ import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import useAnimateOnScrolled from '../utils/animateOnScrolled'
-
-
 
 
 const Navbar = () => {
