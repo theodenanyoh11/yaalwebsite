@@ -1,63 +1,40 @@
 import React from "react"
-import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 
-
-const Pastepisodes = ({ className }) => {
-  
-  
+const Pastepisodes = () => {
+  const { pastEpisodes } = useStaticQuery(getPastEpisodes)
+ 
   return (
-  
-      
+
     <Wrapper>
       <Row>
         <Col>
         <h3>Past Episodes</h3>
         <InnerGrid>
-            <EpisodeCard>
-                <h6> English Breakfast Tea with Tasty Donut</h6>
-                <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.
-                </p>
-            </EpisodeCard>
-
-            <EpisodeCard>
-                <h6> English Breakfast Tea with Tasty Donut</h6>
-                <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.
-                </p>
-            </EpisodeCard>
-
-            <EpisodeCard>
-                <h6> English Breakfast Tea with Tasty Donut</h6>
-                <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.
-                </p>
-            </EpisodeCard>
-
-            <EpisodeCard>
-                <h6> English Breakfast Tea with Tasty Donut</h6>
-                <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.
-                </p>
-            </EpisodeCard>
-
-            <EpisodeCard>
-                <h6> English Breakfast Tea with Tasty Donut</h6>
-                <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.
-                </p>
-            </EpisodeCard>
-
-            <EpisodeCard>
-                <h6> English Breakfast Tea with Tasty Donut</h6>
-                <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.
-                </p>
-            </EpisodeCard>
+          {pastEpisodes.edges.map(({node}) => (
+            <Card key={node.id}>
+              <Link to={node.slug}>
+                <Img
+                fluid={node.heroImage.fluid}
+                alt={`${node.title} card`}
+              />
+            <h6>{node.title}</h6>
+          
+                      <div
+                                  dangerouslySetInnerHTML={{
+              __html: node.summary.childMarkdownRemark.excerpt,
+            }}
+          />
+              </Link>
+            </Card>
+         
+            ))}
             
-        </InnerGrid>
-                 
+        </InnerGrid>               
         </Col>
-
-        
-
       </Row>
     </Wrapper>
       
@@ -66,6 +43,31 @@ const Pastepisodes = ({ className }) => {
 }
 
 // query
+const getPastEpisodes = graphql`
+{
+  pastEpisodes: allContentfulEpisodePost {
+    edges {
+      node {
+        id
+        title
+        publishDate
+        slug
+        summary {
+          childMarkdownRemark {
+            html
+            excerpt
+          } 
+        }
+        heroImage {
+          fluid(maxWidth: 450) {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+    }
+  }
+}
+`
 
 
 
@@ -92,6 +94,7 @@ const Wrapper = styled.div`
 `
 const Row = styled.div`
   display:flex;
+  postion: relative;
 
 
 `
@@ -104,6 +107,7 @@ const Col = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin: 0 20px;
+  width: 100%
  
 `
 const InnerGrid = styled.div`
@@ -112,12 +116,18 @@ const InnerGrid = styled.div`
     grid-auto-columns: 1fr;
     grid-column-gap: 30px;
     grid-row-gap: 30px
-    -ms-grid-columns: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     -ms-grid-row: auto auto;
     grid-template-rows: auto auto;
     width: 100%;
 `
-const EpisodeCard = styled.div`
+const Card = styled.div`
     display: block;
+    height: 100%;
+      p{
+
+      }
+
+
 `

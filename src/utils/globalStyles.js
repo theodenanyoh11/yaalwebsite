@@ -65,7 +65,7 @@ h1 {
 
 h2 {
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #0d3b66;
   font-size: 1.7em;
   line-height: 1.3em;
@@ -82,7 +82,14 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.2px;
 }
-
+h6 {
+  margin: 25px 0;
+  color: #0d3b66;
+  font-size: 1.05em;
+  line-height: 1.0em;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
 
 p {
   margin: 0 0 10px;
