@@ -50,7 +50,7 @@ const getNavbar = graphql`
     navbarLogo: contentfulNavbarLogo {
       logoUrl
       logo {
-        fixed(width:100) {
+        fixed(width:80) {
           ...GatsbyContentfulFixed
         }
       }
@@ -82,6 +82,11 @@ const Nav = styled.nav`
   -ms-flex-align: center;
   align-items: center;
   background-color: transparent;
+  width:100%;
+  max-width: 100%;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  padding: 0 auto;
+ 
 `
 
 const NavbarWrapper = styled.div`
@@ -89,33 +94,20 @@ const NavbarWrapper = styled.div`
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 30px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
+  justify-content: center;
+  display: flex;
   align-items: center;
 
  
-  @media (max-width: 640px) {
-    padding: 15px 0;
-  }
+  @media screen and (max-width: 991px) {
+    .wrapper {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+
+
   /* Inner links */
   
   
@@ -136,23 +128,13 @@ const NavbarGroup = styled.div`
 `
 
 const LogoWrap = styled.div`
-    postion: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
     flex: 1;
+    margin: 0;
+
+
 `
 const NavLinkWrap = styled.div`
     display: flex;
