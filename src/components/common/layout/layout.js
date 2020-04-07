@@ -7,7 +7,6 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { GlobalStyle } from '../../../utils/globalStyles'
 
 import Navbar from '../navigation/navigation'
 import Footer from '../navigation/footer'

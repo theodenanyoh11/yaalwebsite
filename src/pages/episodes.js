@@ -1,8 +1,6 @@
 import React from "react"
 
-import Layout from '../components/common/layout/layout'
 import SEO from '../components/common/layout/seo'
-
 import Pastepisodes from '../components/sections/pastepisodes'
 import Latestepisode from '../components/sections/latestepisode'
 
