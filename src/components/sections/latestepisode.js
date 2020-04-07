@@ -22,7 +22,7 @@ const LatestEpisode = () => {
         />
         </Col>
         <Col>
-        <h3>Latest Episode</h3>
+            <h3>Latest Episode</h3>
             <Link to={slug}>
             <p>{episodeNumber}</p>
             <h2>{title}</h2>

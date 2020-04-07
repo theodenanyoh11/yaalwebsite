@@ -1,11 +1,24 @@
 import { createGlobalStyle } from "styled-components"
+import reset from 'styled-reset'
+
 
 export const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: Muli, sans-serif;
+  ${reset}
+  *, *:before, *:after {
+      box-sizing: border-box;
+  }
+  html  {
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+    font-family: 'Muli', sans-serif;
     color: #737b7d;
     font-size: 16px;
-    line-height: 1.3em;
+  }
+  
+
+  body {
+    line-height: 1.5;
+    letter-spacing: 0.2;
     font-weight: 400;
   }
   a {

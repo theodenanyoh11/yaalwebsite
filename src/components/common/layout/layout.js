@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
   return (
     <>
         
-        <GlobalStyle />
+      
         <Navbar />
         {children}
         <Footer />
