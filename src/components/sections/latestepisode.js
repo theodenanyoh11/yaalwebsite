@@ -83,7 +83,7 @@ const Col = styled.div`
  `
 
 const Wrapper = styled.div`
-  display:block;
+  display:flex;
   width:100%;
   max-width: 1170px;
   margin: 0 auto;
